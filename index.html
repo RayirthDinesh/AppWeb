@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FitStyle - Verification Success!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Modak&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* REFINED BLUE THEME */
+            --primary-color: #2d66f4; /* A vibrant, electric blue */
+            --secondary-color: #0d47a1; /* A deeper, navy-like blue */
+            --background-start: #e0f2ff; /* A very light, cool blue */
+            --background-end: #d1e5ff; /* A slightly darker light blue */
+            --text-dark: #212529; /* A professional dark charcoal color */
+            --text-light: #495057; /* A more prominent gray for supporting text */
+            --card-bg: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --animation-duration: 0.8s;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .container {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 50px 40px;
+            max-width: 450px;
+            width: 100%;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideInUp var(--animation-duration) ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes slideInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .main-logo {
+            font-family: 'Modak', cursive;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn var(--animation-duration) ease-out forwards;
+            animation-delay: 0.4s;
+        }
+
+        .checkmark-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            box-shadow: 0 5px 25px rgba(45, 102, 244, 0.4);
+            transform: scale(0.8);
+            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            animation-delay: 1.6s;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            /* Changed stroke to a lighter color */
+            stroke: #e0f0ff; 
+            /* Decreased stroke-width for a more refined look */
+            stroke-width: 4; 
+            fill: none;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawCheckmark 0.8s ease-out forwards;
+            animation-delay: 2.2s;
+        }
+
+        @keyframes drawCheckmark {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn var(--animation-duration) ease-out forwards;
+            animation-delay: 0.6s;
+        }
+
+        .app-name {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        .message {
+            font-size: 19px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 0px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn var(--animation-duration) ease-out forwards;
+            animation-delay: 1.0s;
+        }
+
+        .bold-text {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        @keyframes fadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-logo">FitStyle</div>
+        <div class="title">
+            Verification Successful!
+        </div>
+        <div class="message">
+            <span class="bold-text">Welcome aboard!</span><br>
+            Your email has been successfully verified.
+            <br><br>
+            You can now close this window and return to <span class="app-name">FitStyle</span>.
+        </div>
+
+        <div class="checkmark-wrapper">
+            <svg class="checkmark" viewBox="0 0 52 52">
+                <path d="M14.1 27.2l7.1 7.2 16.7-16.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>
